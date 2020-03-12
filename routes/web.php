@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\checkdatetubesStatus;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('travel', 'TubesList@index')->name('travel.index');
+Route::get('travel/{tube_id}', 'TubesList@show')->name('travel.show');
